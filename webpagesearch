@@ -1,0 +1,12 @@
+<html>
+<head></head>
+    <body>
+      <link rel="stylesheet" href="/static/Company_styling.css">
+      <h1> Company Search </h1>
+      <div class="search_container">
+      <div><input class="search-input" type="text" placeholder="Search Here...."></input>
+      <div class="suggestions">
+      <script src="/static/Companyjs.js"></script>
+      </div>
+      </div>
+    </body>
