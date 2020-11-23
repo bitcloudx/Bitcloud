@@ -1,0 +1,25 @@
+.search_container{
+  width: 65%;
+  margin: 100px;
+  background: #333;
+  border-radius: 15px;
+}
+.search_container input{
+  background: transparent;
+  border: 0;
+  font-size: 30px;
+  color: #fff;
+  overflow: hidden;
+}
+.suggestions{
+  border-top: 2px solid #999;
+}
+.suggestions > div {
+  padding: 15px;
+  font-size: 20px;
+  color: #fff;
+  border-top: 1px solid #666;
+}
+.Gold_Miners_sugestions > div:hover{
+background-color: #1e4dd4;
+}
