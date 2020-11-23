@@ -1,0 +1,50 @@
+const companies = [
+  {name: 'TLRS',link:'TLRS.html'},{name: 'GOLD'},{name: 'PLM'},{name: 'NCPCF'},
+  {name: 'GPL'},{name: 'NXXGF'},{name: 'GORO'},{name: 'DRD'},
+  {name: 'XOM'},{name: 'PM'},{name: 'KXXPLF'},{name: 'PLG'},
+  {name: 'SBUM'},{name: 'OTMN'},{name: 'SLSR'},{name: 'CAHPF'},
+  {name: 'FGOVF'},{name: 'ISVLF'},{name: 'SGRCF'},{name: 'KOREF'},
+  {name: 'AHELF'},{name: 'DOLLF'},{name: 'DMEHF'},{name: 'SSVFF'},
+  {name: 'NEVDF'},{name: 'NMTLF'},{name: 'AAMMF'},{name: 'FFMGF'},
+  {name: 'GLDLF'},{name: 'ELYGF'},{name: 'WLBMF'},{name: 'LRTNF'},
+  {name: 'ANXGF'},{name: 'GPL'},{name: 'NAK'},{name: 'MLRKF'},
+  {name: 'RVSDF'},{name: 'MUX'},{name: 'AUY'},{name: 'NGD'},
+  {name: 'SLVRF'},{name: 'GORO'},{name: 'GOLD'},{name: 'EGO'},
+  {name: 'SLVTF'},{name: 'AZS'},{name: 'AAGFF'},{name: 'ORAGF'},
+  {name: 'SILV'},{name: 'CCJ'},{name: 'UEC'},{name: 'DGC.TO'},
+  {name: 'OR'},{name: 'KGC'},{name: 'KOOYF'},{name: 'SVM'},
+  {name: 'KL'},{name: 'JAGGF'},{name: 'WM'},{name: 'DSV'},
+  {name: 'KORE'},{name: 'FVL'},{name: 'ELY'},{name: 'TUO'},
+  {name: 'BNCH'},{name: 'DV'},{name: 'ABRA'},{name: 'SDR'},
+  {name: 'GGI'},{name: 'HMY'},{name: 'NST'},{name: 'BTG'},
+  {name: 'EVN'},{name: 'SAR'},{name: 'EDV'},{name: 'EQX'},
+  {name: 'NG'},{name: 'HL'},{name: 'PVG'},{name: 'SAND'},
+  {name: 'CDE'},{name: 'MDKA'},{name: 'SSRM'},{name: 'USAS'},
+  {name: 'AXU'},{name: 'GBR'},{name: 'AR'},{name: 'HGM'},
+  {name: 'GOR'},{name: 'WGX'},{name: 'LUG'},{name: 'HOC'},
+  {name: 'POG'},{name: 'TXG'},{name: 'MAG'},{name: 'FSM'},
+  {name: 'CEY'},{name: 'RRL'},{name: 'SLR'},{name: 'AG'},
+  {name: 'AAU'},{name: 'TGLDF'}
+];
+
+const searchInput = document.querySelector('.search-input');
+const suggestionsPanel = document.querySelector('.suggestions');
+
+searchInput.addEventListener('keyup', function(){
+  const input = searchInput.value;
+
+
+  const suggestions = companies.filter(function(comp){
+    return comp.name.toLowerCase().startsWith(input);
+  });
+  suggestions.forEach(function(suggested){
+    const div = document.createElement('div');
+    div.innerHTML = suggested.name;
+    clearDialog();
+    suggestionsPanel.appendChild(div);
+
+  });
+  if (input == ''){
+    suggestionsPanel.innerHTML = '';
+  }
+})
